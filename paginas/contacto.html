@@ -144,10 +144,24 @@
 
     <script src="../codigo/script.js"></script>
     <script>
-        // Simple form submission handling
+        // Form submission with email sending
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('¡Gracias por tu mensaje! Nos pondremos en contacto contigo pronto.');
+            
+            // Get form data
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // Create mailto link
+            const mailtoLink = `mailto:Marcel@marketingadveticingllc.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Nombre: ${name}\nEmail: ${email}\n\nMensaje:\n${message}`)}`;
+            
+            // Open email client
+            window.location.href = mailtoLink;
+            
+            // Show confirmation message
+            alert('¡Gracias por tu mensaje! Se abrirá tu cliente de correo para enviar el mensaje a Marcel@marketingadveticingllc.com.');
             this.reset();
         });
     </script>

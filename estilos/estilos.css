@@ -178,8 +178,8 @@ body {
 }
 
 .btn-primary:hover {
-    background: transparent;
-    color: white;
+    background: white;
+    color: #3498db;
     transform: translateY(-3px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
